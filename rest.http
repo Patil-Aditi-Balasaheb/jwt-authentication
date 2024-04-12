@@ -1,0 +1,32 @@
+GET http://localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTI5NjEyOTYsImV4cCI6MTcxMjk2MTMxMSwiYXVkIjoiNjYxOWIwMjc3MDA1YjgwN2Q3ZjM0YTU2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.FgkjMOz2CU64iPPOb944471U-PsUQZ2Y6H3iE5IcS-I
+
+### Login Route
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "aarti@gmail.com",
+    "password": "123456"
+}
+
+### Register Route
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "email": "aarti@gmail.com",
+    "password": "123456"
+}
+
+### Refresh token Route
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTI5NjI3NzcsImV4cCI6MTc0NDUyMDM3NywiYXVkIjoiNjYxOWIwMjc3MDA1YjgwN2Q3ZjM0YTU2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.0bq1aV5L3RnjxpRp1O59_u6asIkj_z1F3x1ZhD1hKvU"
+}
+
+### Logout Route
+DELETE http://localhost:3000/auth/logout
+

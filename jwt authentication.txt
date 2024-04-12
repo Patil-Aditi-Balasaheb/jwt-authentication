@@ -1,0 +1,61 @@
+nodejs, mongodb, 
+redis - in-memory data structure - used for storing refresh tokens,
+jwt - tokens used as access token and as refresh tokens
+
+
+
+what is jwt?
+- base64 encoded url
+- it is encoded and not encrypted thats why we should not save sensitive info inside a jwt
+- jwt: header.payload.signature
+- header: algo used (HMAC SHA256) and type of token (jwt)
+- payload: contains claims
+- signature: used to verify if the token wasn't changed along the way
+
+
+
+payload:
+- registered claims: iss(issuer), exp(expiration time), sub(subject), aud(audience) and others
+- public claims
+- private claims
+
+
+
+token flow:
+1. registered client sends usename & password to server
+2. on verification the server send a pair of access-token and refresh-token to the client
+3. now to access any protected route the client will send the access-token as authorization header to the server
+4. if valid the server responds access token valid 
+	else not valid that is 401 forbidden. which means the jwt is expired
+5. if jwt is expired then in that case the client sends request to the refresh token route along with the refresh-token in header body to the server
+6. then the server will again send a new pair of access-token and refresh-token to the client
+7. if the refresh-token is not valid or the refresh-token is blacklisted the server will respond with the status of 403 unauthorized
+
+
+
+why we need 2 tokens?
+- after a successful authentication we send back 2 tokens to the client, containing the client id as payload in the audience claim
+	1. access token (validity: 1 hr)
+	2. refresh token (validity: 1 yr or so)
+- access tokens are used for protected routes
+- refresh tokens are used to get a new pair of access token and refresh token when access token expires
+- the previous refresh token is blacklisted by overwriting the old refresh token with the new one in redis
+- to logout, we simply remove the access token and refresh token from client side and we remove the refresh token from the redis as well
+
+
+
+npm packages required:
+- express
+- mongoose
+- jsonwebtoken
+- redis
+- @hapi/joi
+- bcrypt
+- dotenv
+- http-errors
+- nodemon
+- morgan
+
+
+
+vscode extension used for checking api: REST Client
