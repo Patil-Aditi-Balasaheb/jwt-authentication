@@ -59,3 +59,5 @@ npm packages required:
 
 
 vscode extension used for checking api: REST Client
+used redis cloud for storing the refresh tokens of users
+downloaded and installed Redis Insight app to view the records i.e. the key value pair of userId and refresh token

@@ -5,6 +5,7 @@ require('dotenv').config()
 require("./helpers/mongodb")
 const AuthRoute = require("./routes/Auth.route")
 const { verifyAccessToken } = require("./helpers/jwt")
+require("./helpers/redis")
 
 const app = express()
 

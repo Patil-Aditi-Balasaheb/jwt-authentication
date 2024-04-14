@@ -1,5 +1,5 @@
 GET http://localhost:3000
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTI5NjEyOTYsImV4cCI6MTcxMjk2MTMxMSwiYXVkIjoiNjYxOWIwMjc3MDA1YjgwN2Q3ZjM0YTU2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.FgkjMOz2CU64iPPOb944471U-PsUQZ2Y6H3iE5IcS-I
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTMxMjA0NzUsImV4cCI6MTcxMzEyNDA3NSwiYXVkIjoiNjYxOWIwMjc3MDA1YjgwN2Q3ZjM0YTU2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.QEb3fWpLEYMGn6-f8rbvbaBbkNNg5_3WUlZ4uSMMSbE
 
 ### Login Route
 POST http://localhost:3000/auth/login
@@ -15,7 +15,7 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "email": "aarti@gmail.com",
+    "email": "sarita@gmail.com",
     "password": "123456"
 }
 
@@ -24,9 +24,13 @@ POST http://localhost:3000/auth/refresh-token
 Content-Type: application/json
 
 {
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTI5NjI3NzcsImV4cCI6MTc0NDUyMDM3NywiYXVkIjoiNjYxOWIwMjc3MDA1YjgwN2Q3ZjM0YTU2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.0bq1aV5L3RnjxpRp1O59_u6asIkj_z1F3x1ZhD1hKvU"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTMxMDczNjQsImV4cCI6MTc0NDY2NDk2NCwiYXVkIjoiNjYxOWIwMjc3MDA1YjgwN2Q3ZjM0YTU2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.7JqJPEWCDubK7NcQSr3irDrktm98ePa7BeJ_l5CEZis"
 }
 
 ### Logout Route
 DELETE http://localhost:3000/auth/logout
+Content-Type: application/json
 
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTMxMDc0MDksImV4cCI6MTc0NDY2NTAwOSwiYXVkIjoiNjYxOWIwMjc3MDA1YjgwN2Q3ZjM0YTU2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.xr6aH0LzwkttssMhKeMfCK0hj59cNin0_gf0aWGQ47A"
+}

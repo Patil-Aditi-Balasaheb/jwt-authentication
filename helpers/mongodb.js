@@ -3,8 +3,8 @@ const mongoose = require('mongoose')
 mongoose
   .connect(process.env.MONGODB_URI, {
     dbName: process.env.DB_NAME,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
   })
   .then(() => {
     console.log('Pinged your deployment. You successfully connected to MongoDB!')
